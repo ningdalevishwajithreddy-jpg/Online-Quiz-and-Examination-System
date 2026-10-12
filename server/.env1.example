@@ -1,0 +1,53 @@
+# =============================================================
+# QuizSphere - server environment template
+# Copy this file to `server/.env` (recommended) or to `.env` in the
+# repository root. The API loads, in order:
+#   ENV_FILE -> <cwd>/.env -> server/.env -> <repo root>/.env
+# NEVER commit a real .env file.
+# =============================================================
+
+# ---------- Core ----------
+NODE_ENV=development
+PORT=5000
+# Local mongod, local MongoDB, or a MongoDB Atlas SRV connection string.
+MONGO_URI=mongodb://127.0.0.1:27017/quizsphere
+# Public origin of the web client (comma separated list is allowed).
+CLIENT_URL=http://localhost:5173
+# Set to 1 when running behind a reverse proxy / load balancer.
+TRUST_PROXY=0
+# debug | info | warn | error
+LOG_LEVEL=debug
+
+# ---------- Auth / JWT ----------
+# REQUIRED in production: >= 32 characters, generated with e.g.
+#   node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
+JWT_SECRET=dev_only_insecure_secret_change_me_0123456789abcdef
+JWT_EXPIRES_IN=1d
+JWT_COOKIE_NAME=qs_token
+# lax | strict | none  ('none' requires COOKIE_SECURE=1 and HTTPS)
+COOKIE_SAME_SITE=lax
+COOKIE_SECURE=0
+CSRF_COOKIE_NAME=qs_csrf
+CSRF_HEADER_NAME=x-csrf-token
+
+# ---------- Account lockout ----------
+ACCOUNT_LOCK_MAX_ATTEMPTS=5
+ACCOUNT_LOCK_MINUTES=15
+
+# ---------- Rate limiting (requests per window) ----------
+RATE_LIMIT_WINDOW_MINUTES=15
+RATE_LIMIT_GLOBAL_MAX=600
+RATE_LIMIT_AUTH_MAX=20
+RATE_LIMIT_WRITE_MAX=120
+
+# ---------- Database pool ----------
+MONGO_MAX_POOL_SIZE=10
+MONGO_SERVER_SELECTION_TIMEOUT_MS=5000
+
+# ---------- Email (OPTIONAL - email features are disabled when unset) ----------
+# When these are empty the API never claims an email was delivered.
+# EMAIL_HOST=
+# EMAIL_PORT=587
+# EMAIL_USER=
+# EMAIL_PASSWORD=
+# EMAIL_FROM=QuizSphere <no-reply@example.com>

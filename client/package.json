@@ -1,0 +1,38 @@
+{
+  "name": "quizsphere-client",
+  "version": "1.0.0",
+  "private": true,
+  "description": "QuizSphere web client (React + Vite + Tailwind)",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.9.1",
+    "axios": "^1.20.0",
+    "lucide-react": "^1.55.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-hook-form": "^7.89.0",
+    "react-router": "^8.4.0",
+    "recharts": "^3.10.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.2",
+    "eslint": "^10.12.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.4"
+  }
+}

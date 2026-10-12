@@ -1,0 +1,53 @@
+# =============================================================
+# QuizSphere - repository root ignore rules
+# Covers both the `client/` and `server/` workspaces.
+# =============================================================
+
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Environment / secrets - NEVER commit a real .env
+.env
+.env.*
+!.env.example
+!*.env.example
+*.local
+
+# Build output
+dist/
+build/
+client/dist/
+server/dist/
+
+# Test / coverage
+coverage/
+.nyc_output/
+junit.xml
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local databases and downloaded test binaries
+# (server/.cache/mongodb-binaries holds ~135 MB of mongod executables)
+data/
+mongo-data/
+.cache/
+mongodb-binaries/
+
+# Agent / tooling metadata
+.freebuff/
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
